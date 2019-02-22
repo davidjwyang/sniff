@@ -1,0 +1,53 @@
+{	
+	"profile": {
+		"human": {
+			"race": "Asian",
+			"ethnicity": "Korean",
+			"age": "21",
+			"height": "5'9''",
+			"occupation": "student",
+			"hobbies": "studying, watching youtube",
+			"personality": "shy",
+			"instagram": "https://www.instagram.com/sunkebin/"
+		},
+		"dog": {
+			"breed": "Poodle",
+			"size": "Toy",
+			"age": "8",
+			"hobbies": "walks",
+			"personality": "calm"
+		},
+		"names": {
+			"human": "Kevin",
+			"dog": "Bebe"
+		},
+		"id": "1" 
+	},
+
+	"wag": {
+		"sent": [2,3,4],
+		"received": [5,6,7],
+		"id": "1"
+	}
+}
+
+{"signedIn":true,
+"iss":"accounts.google.com",
+"azp":"1029760685682-3ad1oabilkor9neluhli5ksfht0q2jp5.apps.googleusercontent.com",
+"aud":"1029760685682-3ad1oabilkor9neluhli5ksfht0q2jp5.apps.googleusercontent.com",
+"sub":"109339128777435124044",
+"hd":"nyu.edu",
+"email":"jwy273@nyu.edu",
+"email_verified":"true",
+"at_hash":"_Xh-nohlLRwhAGzTJPcilw",
+"name":"David Yang",
+"picture":"https://lh4.googleusercontent.com/-9S5oXIS90xU/AAAAAAAAAAI/AAAAAAAAAAA/AKxrwcZsDD9LLKS01PTr_e6NhKygc2j6kw/s96-c/photo.jpg",
+"given_name":"David",
+"family_name":"Yang",
+"locale":"en",
+"iat":"1547402953",
+"exp":"1547406553",
+"jti":"f201a47bf663e424a4729566eda1c5369b012989",
+"alg":"RS256",
+"kid":"8aad66bdefc1b43d8db27e65e2e2ef301879d3e8",
+"typ":"JWT"}
