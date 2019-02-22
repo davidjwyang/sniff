@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux'
+import { combineReducers } from 'redux'
 
 import C from './actions/constants'
 
@@ -29,7 +29,5 @@ const userData = (state = {}, action) => {
 			return state
 	}
 } 
-
-
 
 export default combineReducers({ user, userData })

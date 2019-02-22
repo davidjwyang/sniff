@@ -12,19 +12,18 @@ import { UserData } from './redux/actions/user-data'
 class AppRouter extends React.Component {
 	constructor(props) {
 		super(props)
-	
-		this.onSignin = this.onSignin.bind(this)
-		this.onSignout = this.onSignout.bind(this)
-		this.loadSessionUser = this.loadSessionUser.bind(this)	
-		this.onCreateAccount = this.onCreateAccount.bind(this)
+
 		this.redirectPath - this.redirectPath.bind(this)
 	}
 
 	redirectPath() {
+		console.log(this.props.user)
 		if (this.props.user.signedIn == false) {
-			return <Redirect to="/login"/>
+			return <Redirect to="/login" />
+			console.log('hi2')
 		} else {
-			return <Redirect from="/" to="/app"/>
+			console.log('hi1')
+			return <Redirect to="/app" />
 		}
 	}	
 
@@ -33,9 +32,12 @@ class AppRouter extends React.Component {
 	}
 
 	render() {
-		if (!this.props.user || this.props.user.loading)
+		if (this.props.user == undefined || 
+			this.props.user.loading == undefined ||
+			this.props.user.loading) {
+			console.log('hi')
 			return <div> {'LOADING USER'} </div>
-			
+		} 
 		return (
 			<BrowserRouter>	
 				<div>		
@@ -59,7 +61,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	fetchSessionUser : () => dispatch(SessionUser.fetch),
+	fetchSessionUser : () => dispatch(SessionUser.fetch())
 })
 
-export default connect()(AppRouter)
+export default connect(mapStateToProps, mapDispatchToProps)(AppRouter)

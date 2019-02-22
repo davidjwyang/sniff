@@ -1,9 +1,9 @@
 
 function createFetchConstants(name) {
 	name = name.toUpperCase()
-	return 
-	({
+	return ({
 		fetch : `FETCH ${name}`,
+		POST : `POST ${name}`,
 		loading : `LOADING ${name}`,
 		update : `UPDATE ${name}`,
 		failure : `FAILURE ${name}`

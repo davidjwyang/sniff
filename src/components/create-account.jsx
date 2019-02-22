@@ -19,14 +19,14 @@ class CreateAccount extends React.Component {
 		this.dogEntries = CreateEntries(this.dogFieldIds)
 		this.requiredDogFields = ['name']
 
-		this.state = { page : this.postUserIdPage, Form1ErrorMsg : '' }
-
 		this.userData = { email : this.props.email }
 
-		this.onSubmitUserId = this.onSubmitUserId.bind(this)
+		this.onSubmitUserIdForm = this.onSubmitUserIdForm.bind(this)
 		this.postUserIdPage = this.postUserIdPage.bind(this)
-		this.onSubmitDescrip = this.onSubmitDescrip.bind(this)
+		this.onSubmitDescripForm = this.onSubmitDescripForm.bind(this)
 		this.postDescripPage = this.postDescripPage.bind(this)	
+
+		this.state = { page : this.postUserIdPage, Form1ErrorMsg : '' }
 	}	
 
 	onSubmitUserIdForm(e) {

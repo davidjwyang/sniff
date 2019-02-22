@@ -17,8 +17,7 @@ import { UserData } from './redux/actions/user-data.js'
 class App extends React.Component {
 	constructor(props) {
 		super(props)
-
-		this.loadUserData = this.loadUserData.bind(this)
+		
 		this.redirectPath = this.redirectPath.bind(this)
 	}
 
@@ -70,4 +69,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login) 
+export default connect(mapStateToProps, mapDispatchToProps)(App) 

@@ -2,40 +2,8 @@ import C from './constants'
 
 //All User Data
 export const UserData = {
-	fetch : (email) => {
-		return (dispatch, getState) => {
-			dispatch(this.loading())
-			fetch(`/app/api/users/email/${email}`).then(res => {
-				return res.json()
-			}).then(userData => {
-				dispatch(this.update(userData))
-			}).catch(err => {
-				dispatch(this.failure(err))
-			})
-		}	
-	},
-
-	post : (userData) => {
-		return (dispatch, getState) => {
-			dispatch(this.loading())
-			fetch(`/app/api/userDatas/`, {
-				method : 'POST',
-				headers : {
-					'Content-Type' : 'application/json'
-				},
-				body : JSON.stringify(userData)
-			}).then(res => {
-				return res.json()
-			}).then(userData => {
-				dispatch(this.update(userData))
-			}).catch(err => {
-				dispatch(this.failure(err))
-			})
-		}
-	},
-
 	loading : () => ({
-		type : C.UserData.Loading,
+		type : C.UserData.loading,
 		loading : true
 	}),
 
@@ -51,6 +19,42 @@ export const UserData = {
 		err
 	})
 } 
+
+const UserDataFetchPost = {
+ 	fetch : (email) => {
+		return (dispatch, getState) => {
+			dispatch(UserData.loading())
+			fetch(`/app/api/users/email/${email}`).then(res => {
+				return res.json()
+			}).then(userData => {
+				dispatch(UserData.update(userData))
+			}).catch(err => {
+				dispatch(UserData.failure(err))
+			})
+		}	
+	},
+
+	post : (userData) => {
+		return (dispatch, getState) => {
+			dispatch(UserData.loading())
+			fetch(`/app/api/userDatas/`, {
+				method : 'POST',
+				headers : {
+					'Content-Type' : 'application/json'
+				},
+				body : JSON.stringify(userData)
+			}).then(res => {
+				return res.json()
+			}).then(userData => {
+				dispatch(UserData.update(userData))
+			}).catch(err => {
+				dispatch(UserData.failure(err))
+			})
+		}
+	}
+}
+
+Object.assign(UserData, UserDataFetchPost)
 
 //User Descrip 
 export const UserDescrip = {
