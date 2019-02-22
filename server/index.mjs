@@ -56,15 +56,15 @@ MongoClient.connect('mongodb://localhost').then(connection => {
 			let proj = { projection : { userId : 1, _id : 0 } }    	
 	    	//Check if user is already in database.  
 	    	let userData = db.collection('userDatas').findOne(query, proj
-	    	).then(result => {
+	    	).then(userData => {
 	    		req.session.user = {
     				signedIn : true, email : data.email
   				}
 	    		//User object stored in session. 
-	    		if (result.userId)
-	    			req.session.user.new = false 
+	    		if (!userData)
+	    			req.session.user.new = true
 	    		else 		
-    				req.session.user.new = true
+    				req.session.user.new = false
 	    		res.json(req.session.user)
 	    	})
 	    }).catch(error => {

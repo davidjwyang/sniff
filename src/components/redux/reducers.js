@@ -24,7 +24,7 @@ const userData = (state = {}, action) => {
 			action.userData.loading = action.loading
 			return action.userData
 		case C.UserData.failure:
-			return { ...state, err : actions.err }
+			return { ...state, err : action.err }
 		default: 
 			return state
 	}

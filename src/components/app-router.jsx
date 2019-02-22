@@ -20,9 +20,7 @@ class AppRouter extends React.Component {
 		console.log(this.props.user)
 		if (this.props.user.signedIn == false) {
 			return <Redirect to="/login" />
-			console.log('hi2')
 		} else {
-			console.log('hi1')
 			return <Redirect to="/app" />
 		}
 	}	
@@ -35,7 +33,7 @@ class AppRouter extends React.Component {
 		if (this.props.user == undefined || 
 			this.props.user.loading == undefined ||
 			this.props.user.loading) {
-			console.log('hi')
+			
 			return <div> {'LOADING USER'} </div>
 		} 
 		return (

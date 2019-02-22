@@ -28,7 +28,7 @@ class Login extends React.Component {
 
 	signIn() {
 		const auth2 = window.gapi.auth2.getAuthInstance()	
-		
+		console.log('hi1')
 		auth2.signIn().then(googleUser => {
 			fetch('/app/auth/signin', {
 				method: 'POST',
@@ -76,7 +76,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	onSignin : (user) => dispatch(SessionUser.update(user))
+	onSignin : (user) => {
+		console.log('hi2')
+		dispatch(SessionUser.update(user))
+	}
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login) 

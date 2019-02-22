@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { CreateEntries, FieldGroups, FieldGroup, extractValues, createObject } from './help/form-helpers.jsx'
 import { Button, Form } from 'react-bootstrap'
 
-import UserDescrip from './redux/actions/user-data'
+import { UserData } from './redux/actions/user-data'
 
 class CreateAccount extends React.Component {
 	constructor(props) {
@@ -32,7 +32,7 @@ class CreateAccount extends React.Component {
 	onSubmitUserIdForm(e) {
 		e.preventDefault()
 		let userId = e.target.userId.value
-		fetch(`/app/api/users/userId/${userId}`).then(res => {
+		fetch(`/app/api/userDatas/userId/${userId}`).then(res => {
 			return res.json()
 		}).then(data => {
 			if (data) {

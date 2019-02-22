@@ -105,9 +105,12 @@ export const UserWags ={
 	}
 }
 
-function deepCopyUserData(userData) {
-	let descrip = { ...UserData.descrip }
-	let wags = { to : { ...userData.wags.to }, from : { ...userData.wags.from } }
+export function deepCopyUserData(userData) {
+	let descrip = { ...userData.descrip }
+	let wags = null
+	if (userData.wags) {
+		let wags = { to : { ...userData.wags.to }, from : { ...userData.wags.from } }
+	}
 	return { ...userData, descrip, wags }
 }
 

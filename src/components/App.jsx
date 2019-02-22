@@ -23,10 +23,9 @@ class App extends React.Component {
 
 	redirectPath() {
 		if (this.props.isNewUser) {
-			return <Redirect from='/' to='/app/account'/>
-
-		} else {
 			return <Redirect to='/app/create-account'/>
+		} else {
+			return <Redirect from='/' to='/app/account'/>
 		}
 	}
 
